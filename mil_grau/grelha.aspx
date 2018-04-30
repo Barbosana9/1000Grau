@@ -7,15 +7,40 @@
     <title></title>
     <link rel="stylesheet" href="css\bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css\bootstrap.min.css" type="text/css" />
-    <script type="text/javascript" src="js\bootstrap.bundle.js"></script>
-    <script type="text/javascript" src="js\bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="js\jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css\index.css" type="text/css" />
+
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+            <h5 class="my-0 mr-md-auto font-weight-normal">Mil Grau</h5>
+            <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="#">Home</a>
+                <a class="p-2 text-dark" href="#">Receitas</a>
+            </nav>
+            <a class="btn btn-outline-primary" href="#">Sair</a>
+        </div>
         <div>
+
+            <div class="container" id="main">
+                <div class="row">
+                    <div class="col">
+                        <h2>Média: <label id='average'>0.00</label></h2>
+                    </div>
+
+                </div>
+            </div>
+
 
         </div>
     </form>
+    <script type="text/javascript" src="js\bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="js\bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="js\jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js\index.js"></script>
+    <script type="text/javascript" src="js\grelha.js"></script>
+    
+
 </body>
 </html>

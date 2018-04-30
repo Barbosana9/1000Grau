@@ -1,0 +1,15 @@
+﻿body {
+}
+
+.col{
+    background-color:black;
+    color:white;
+    width:12%;
+
+}
+.col-2{
+    background-color:gray;
+    color:white;
+    border-color:aqua;
+    border:dotted;
+}
