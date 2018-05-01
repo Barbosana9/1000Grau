@@ -1,6 +1,23 @@
 ﻿window.onload = get_data();
 
+//função que muda a cor da temperatura
+function changeTempColor(avarange,min,max) {
 
+    $('#displayTemp').removeClassStartsWith('b');
+
+    if (avarange < max && avarange > min) {
+        $('#displayTemp').addClass('badge badge-success');
+    }
+    else if (avarange <= min) {
+        $('#displayTemp').addClass('badge badge-primary');
+    }
+    else {
+        $('#displayTemp').addClass('badge badge-danger');
+    }
+  
+}
+
+//função que busca e retorna a temperatura no servidor node.
 function get_data() {
 
     // realizando a conexao com o servidor node
@@ -16,12 +33,9 @@ function get_data() {
     }
 
     //escrevendo no html a temperatura na tag html
-    document.getElementById('average').textContent = obj.average;
-
-    
+    return obj.average;
 }
 
-var varialvel;
 
 setInterval(() => {
     get_data();

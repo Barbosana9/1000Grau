@@ -21,17 +21,27 @@
             </nav>
             <a class="btn btn-outline-primary" href="#">Sair</a>
         </div>
+
         <div>
 
             <div class="container" id="main">
                 <div class="row">
+                    <div class="col-12">
+                        <h1>Grelha <span id="displayTemp" class="badge badge-primary">
+                            <label id='average'>0.00</label></span></h1>
+                    </div>
+                </div>
+
+                <div class="row">
                     <div class="col">
-                        <h2>Média: <label id='average'>0.00</label></h2>
+                        <asp:Button runat="server" Text="Novo Preparo" OnClick="btnNovoPreparo_Click" id="btnNovoPreparo" class="btn btn-outline-dark"></asp:Button>
                     </div>
 
                 </div>
-            </div>
 
+                <!--botão para adicionar um novo preparo-->
+
+            </div>
 
         </div>
     </form>
@@ -40,7 +50,7 @@
     <script type="text/javascript" src="js\jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js\index.js"></script>
     <script type="text/javascript" src="js\grelha.js"></script>
-    
+
 
 </body>
 </html>

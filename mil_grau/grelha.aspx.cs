@@ -13,5 +13,10 @@ namespace mil_grau
         {
 
         }
+
+        protected void btnNovoPreparo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
