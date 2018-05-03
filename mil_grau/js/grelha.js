@@ -16,27 +16,3 @@ function changeTempColor(avarange,min,max) {
     }
   
 }
-
-//função que busca e retorna a temperatura no servidor node.
-function get_data() {
-
-    // realizando a conexao com o servidor node
-    var http = new XMLHttpRequest();
-    http.open('GET', 'http://localhost:3000/api', false);
-    http.send(null);
-
-    var obj = JSON.parse(http.responseText);
-
-    //retornando caso a temperatura não contenha valor
-    if (obj.data.length == 0) {
-        return;
-    }
-
-    //escrevendo no html a temperatura na tag html
-    return obj.average;
-}
-
-
-setInterval(() => {
-    get_data();
-}, 1000);
