@@ -31,6 +31,19 @@
                             <label id='average'>0.00</label></span></h1>
                     </div>
                 </div>
+                
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="chart" id="chart">
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
 
                 <div class="row">
                     <div class="col">

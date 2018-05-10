@@ -67,9 +67,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\index.css" />
+    <Content Include="institucional.aspx" />
     <Content Include="js\grelha.js" />
     <Content Include="js\index.js" />
     <None Include="packages.config" />
+    <Content Include="scss\one-page-wonder.scss" />
+    <Content Include="scss\_bootstrap-overrides.scss" />
+    <Content Include="scss\_global.scss" />
+    <Content Include="scss\_masthead.scss" />
+    <Content Include="scss\_mixins.scss" />
+    <Content Include="scss\_navbar.scss" />
+    <Content Include="scss\_variables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,6 +113,13 @@
     </Compile>
     <Compile Include="grelha.aspx.designer.cs">
       <DependentUpon>grelha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="institucional.aspx.cs">
+      <DependentUpon>institucional.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="institucional.aspx.designer.cs">
+      <DependentUpon>institucional.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
