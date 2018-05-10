@@ -16,7 +16,7 @@ function changeTempColor(avarange,min,max) {
 }
 
 //usar somente para testes rapidos de desing, o correto é apartir do aspx
-function get_data() {
+/*function get_data() {
 
     // realizando a conexao com o servidor node
     var http = new XMLHttpRequest();
@@ -40,6 +40,6 @@ function get_data() {
 //invocando a função que escreve a temperatura na tela, ela é chamada a cada 1 segundo
 setInterval(() => {
     get_data();
-}, 1000);
+}, 1000);*/
 
 

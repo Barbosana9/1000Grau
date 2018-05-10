@@ -28,7 +28,10 @@
                 <div class="row">
                     <div class="col-12">
                         <h1>Grelha <span id="displayTemp" class="badge badge-primary">
-                            <label id='average'>0.00</label></span></h1>
+                            <asp:Label Text="0.00" runat="server" ID="average"/></span>
+                             
+
+                        </h1>
                     </div>
                 </div>
                 

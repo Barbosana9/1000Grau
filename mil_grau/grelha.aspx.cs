@@ -16,7 +16,9 @@ namespace mil_grau
 
         protected void btnNovoPreparo_Click(object sender, EventArgs e)
         {
+            ConnectionFactory bancoDeDados = new ConnectionFactory();
 
+            average.Text = bancoDeDados.getTempeture().ToString();
         }
     }
 }
