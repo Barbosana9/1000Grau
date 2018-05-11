@@ -34,13 +34,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">INSCREVER-SE</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ENTRAR</a>
-            </li>
+          <ul class="navbar-nav ml-auto">           
+           
           </ul>
         </div>
       </div>
@@ -61,15 +56,15 @@
     <section>
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-4 order-lg-8">
+          <div class="col-lg-5 order-lg-5">
             <div class="p-5">
-              <img class="img-fluid rounded-circle" src="img/images.jpg" alt="">
+              <img class="img-fluid rounded-circle" src="img/473375722.jpg" alt="473375722.jpg">
             </div>
           </div>
           <div class="col-lg-6 order-lg-1">
             <div class="p-5">
               <h2 class="display-4">Medidor de Temperatura para Churrasqueira</h2>
-              <p>O medidor temperatura que auxilia no preparo de suas carnes, com isso facilidade o controle de temperatura do assado, atuando nas diferentes fases dos serviços de alimentação.  </p>
+              <p>O medidor temperatura auxilia no preparo de suas carnes, com isso facilita o controle da temperatura do assado, atuando nas diferentes fases dos serviços de alimentação.  </p>
             </div>
           </div>
         </div>
@@ -97,6 +92,21 @@
     <!-- Footer -->
     <footer class="py-5 bg-black">
       <div class="container">
+
+          <h2 class="my-4"> Nosso Esquipe</h2>
+	</div>
+	<div class="col-lg-4 col-sm-6 text-center mb-4">
+	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""
+	<>Nayara <br>
+	<%--<small>Job Title</small>--%>
+	<%--</h3>--%>
+	<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+        
+	</div>
+	<div class="col-lg-4 col-sm-6 text-center mb-4">
+	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">
+
+
         <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2018</p>
       </div>
       <!-- /.container -->
