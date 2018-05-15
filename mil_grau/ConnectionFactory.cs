@@ -18,27 +18,22 @@ namespace mil_grau
             {
                 connection.Open();
 
-                string sql = "SELECT TOP 30 * FROM temperaturalog ORDER BY id DESC ";
+                string sql = "SELECT TOP 1 * FROM temperaturalog";
 
                 SqlCommand command = new SqlCommand(sql, connection);
 
                 SqlDataReader temperaturas = command.ExecuteReader();
 
-                double media = 0.0;
-
-                int total = 0;
+                double temperatura = 0.0;
 
                 while (temperaturas.Read())
                 {
-                    media += double.Parse(temperaturas["temperaturaLog"].ToString());
-                    total++;
+                    temperatura = double.Parse(temperaturas["temperaturaLog"].ToString());
                 }
 
                 connection.Close();
 
-                reverter(connection);
-
-                return media / total;
+                return temperatura;
             }
         }
 
