@@ -1,4 +1,10 @@
-﻿//função que muda a cor da temperatura
+﻿$(document).ready(function preSetPage() {
+
+
+    getActualTemp();
+});
+
+//função que muda a cor da temperatura
 function changeTempColor(avarange,min,max) {
 
     $('#displayTemp').removeClassStartsWith('b');
@@ -15,31 +21,25 @@ function changeTempColor(avarange,min,max) {
   
 }
 
-//usar somente para testes rapidos de desing, o correto é apartir do aspx
-/*function get_data() {
 
-    // realizando a conexao com o servidor node
-    var http = new XMLHttpRequest();
-    http.open('GET', 'http://localhost:3000/api', false);
-    http.send(null);
-
-    var obj = JSON.parse(http.responseText);
-
-    //retornando caso a temperatura não contenha valor
-    if (obj.data.length == 0) {
-        return;
-    }
-
-    //escrevendo no html a temperatura na tag html
-    document.getElementById('average').textContent = obj.average;
-
-    return obj.avarange;
-
+function getActualTemp() {
+    $.ajax({
+        type: "POST",
+        url: "../grelha.aspx/getTempeture",
+        data: '{}',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: OnSuccess,
+        failure: function (response) {
+            alert(response.d);
+        }
+    });
+}
+function OnSuccess(response) {
+    changeTempColor(response.d, 0.0, 30.0);
+    document.getElementById('displayTemp').textContent = response.d;
 }
 
-//invocando a função que escreve a temperatura na tela, ela é chamada a cada 1 segundo
 setInterval(() => {
-    get_data();
-}, 1000);*/
-
-
+    getActualTemp();
+}, 1000);
