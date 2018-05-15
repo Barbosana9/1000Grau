@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html>
+
+<head>
+	<title>Line Chart</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <style>
+        .new{
+            color:navajowhite;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <!--tag que sera escrita a temperatura-->
+        <h2>Média: <label id='average'>0.00</label></h2>
+        <h2>Média: <label class="new" id='temp'>0.00</label></h2>
+    </section>
+
+    <script>
+        
+        function get_data() {
+
+            // realizando a conexao com o servidor node
+            var http = new XMLHttpRequest();
+            http.open('GET', 'http://localhost:3000/api', false);
+            http.send(null);
+
+            var obj = JSON.parse(http.responseText);
+
+            //retornando caso a temperatura não contenha valor
+            if (obj.data.length == 0) {
+                return;
+            }
+
+            //escrevendo no html a temperatura na tag html
+            document.getElementById('average').textContent = obj.average
+            document.getElementById('temp').textContent = obj.average
+               
+        }
+
+        //invoca a função que escreve a temperatura no html
+        get_data();
+
+        //invocando a função que escreve a temperatura na tela, ela é chamada a cada 1 segundo
+        setInterval(() => {
+            get_data();
+        }, 500);
+
+    </script>
+</body>
+
+</html>
