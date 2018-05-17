@@ -39,7 +39,7 @@ function getActualTemp() {
 }
 function OnSuccess(response) {
     changeTempColor(response.d, 0.0, 30.0);
-    document.getElementById('displayTemp').textContent = response.d;
+    document.getElementById('displayTemp').textContent = response.d.toFixed(1) + " ºC";
     //atualizando os valores do grafico
     drawChart(response.d);
 }
