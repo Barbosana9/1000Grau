@@ -14,6 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/institucional.css" rel="stylesheet" type="text/css" />
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -93,21 +94,35 @@
     <footer class="py-5 bg-black">
       <div class="container">
 
-          <h2 class="my-4"> Nosso Esquipe</h2>
+          <h2 class="my-4"> Nossa Esquipe</h2>
 	</div>
 	<div class="col-lg-4 col-sm-6 text-center mb-4">
 	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""
-	<>Nayara <br>
-	<%--<small>Job Title</small>--%>
-	<%--</h3>--%>
-	<p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+	<>Matheus Vicente <br>
+
+       
+	</div>
+	<div class="col-lg-4 col-sm-6 text-center mb-4">
+	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""
+	< <div class="integrantes">Nayara Barbosa <br>
+        </div>
         
 	</div>
 	<div class="col-lg-4 col-sm-6 text-center mb-4">
+	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""        <div class="integrantes">Vanessa Ferreira<br>
+       
+        </div>
+	</div>
+	<div align="center"="col-lg-4 col-sm-6 text-center mb-4">
 	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt="">
+        
 
+         <div class="integrantes">Vinicius Oliveira<br>
+             
+        
+    </div>
 
-        <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2018</p>
+        <Copyright &copy; Your Website 2018</p>
       </div>
       <!-- /.container -->
     </footer>
