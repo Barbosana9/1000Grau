@@ -53,11 +53,15 @@
                 <div class="row">
                     <div class="col">
                         <asp:Button runat="server" Text="Novo Preparo" OnClick="btnNovoPreparo_Click" id="btnNovoPreparo" class="btn btn-outline-dark"></asp:Button>
+                       
                     </div>
 
                 </div>
 
-                <!--botão para adicionar um novo preparo-->
+                        <asp:DropDownList ID="DropReceitas" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nome" DataValueField="COD_Receita">
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=milgrau.database.windows.net;Initial Catalog=cardapio;User ID=picanha;Password=info@211" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Receita]"></asp:SqlDataSource>
+
 
             </div>
 

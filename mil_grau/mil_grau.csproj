@@ -125,6 +125,7 @@
     <Compile Include="institucional.aspx.designer.cs">
       <DependentUpon>institucional.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ModelReceita.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
