@@ -97,19 +97,23 @@
           <h2 class="my-4"> Nossa Esquipe</h2>
 	</div>
 	<div class="col-lg-4 col-sm-6 text-center mb-4">
-	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""
+	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""
+
 	<>Matheus Vicente <br>
 
        
 	</div>
 	<div class="col-lg-4 col-sm-6 text-center mb-4">
-	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""
+	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""
+
 	< <div class="integrantes">Nayara Barbosa <br>
         </div>
         
 	</div>
 	<div class="col-lg-4 col-sm-6 text-center mb-4">
-	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""        <div class="integrantes">Vanessa Ferreira<br>
+	<img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""
+
+        <div class="integrantes">Vanessa Ferreira<br>
        
         </div>
 	</div>

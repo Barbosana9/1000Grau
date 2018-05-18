@@ -7,7 +7,7 @@
 });
 
 //função que muda a cor da temperatura
-function changeTempColor(avarange,min,max) {
+function changeTempColor(avarange, min, max) {
 
     $('#displayTemp').removeClassStartsWith('b');
 
@@ -20,7 +20,7 @@ function changeTempColor(avarange,min,max) {
     else {
         $('#displayTemp').addClass('badge badge-danger');
     }
-  
+
 }
 
 
@@ -49,20 +49,20 @@ setInterval(() => {
 }, 1000);
 
 //apartir daqui todo relacionado ao grafico
-var data = null, grafico = null,total = 1;
+var data = null, grafico = null, total = 1;
 
 function drawChart(temp) {
 
-        if (data == null) {
-            data = new google.visualization.DataTable();
-            data.addColumn('number', 'Tempo');
-            data.addColumn('number', 'ºC');
-        }
+    if (data == null) {
+        data = new google.visualization.DataTable();
+        data.addColumn('number', 'Tempo');
+        data.addColumn('number', 'ºC');
+    }
 
-        data.addRows([[total,temp]]);
+    data.addRows([[total, temp]]);
 
-        grafico = new google.visualization.LineChart(document.getElementById('curve_chart'));
-        grafico.draw(data, { title: "Temperaturas em Tempo Real" });
+    grafico = new google.visualization.LineChart(document.getElementById('curve_chart'));
+    grafico.draw(data, { title: "Temperaturas em Tempo Real" });
 
     total++;
 }
