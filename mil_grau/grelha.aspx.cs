@@ -26,8 +26,6 @@ namespace mil_grau
 
             return double.Parse(bancoDeDados.getTempeture().ToString());
         }
-        
 
-        
     }
 }

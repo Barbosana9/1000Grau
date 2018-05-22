@@ -65,6 +65,79 @@ function drawChart(temp) {
     grafico.draw(data, { title: "Temperaturas em Tempo Real" });
 
     total++;
+    escreverMedias(temp);
 }
-// 
 
+var temperaturas = [100];
+var i = 0;
+
+function escreverMedias(temperatura) {
+    temperaturas[i] = temperatura;
+    
+    if (i == 99) {
+        i = 0;
+
+        temperaturas.sort(function (a, b) { return a - b });
+
+        $('#LBLmedia').text(calcularMedia().toFixed(1));
+        $('#LBL1quartil').text(calcularQuartil(1));
+        $('#LBLmoda').text(calcularModa().toFixed(1));
+        $('#LBLmediana').text(((temperaturas[49] + temperaturas[50]) / 2).toFixed(1));
+        $('#LBLminima').text(temperaturas[0].toFixed(1));
+        $('#LBL2quartil').text(calcularQuartil(2));
+        $('#LBLmaxima').text(temperaturas[98].toFixed(1));
+    }
+
+    i++;
+}
+
+function calcularMedia() {
+    var media = 0;
+
+    for (i = 0; i < 99; i++) {
+        media = media + temperaturas[i]
+    }
+
+    return media / 99;
+}
+function calcularMediana() {
+    return;
+}
+function calcularQuartil(qual) {
+    var quartil
+
+    if (qual == 1) {
+
+    } else {
+
+    }
+    return;
+}
+
+function calcularMaxima() {
+    
+}
+function calcularMinima() {
+    return;
+}
+function calcularModa() {
+
+    var array = temperaturas;
+
+        if (array.length == 0)
+            return null;
+        var modeMap = {};
+        var maxEl = array[0], maxCount = 1;
+        for (var i = 0; i < array.length; i++) {
+            var el = array[i];
+            if (modeMap[el] == null)
+                modeMap[el] = 1;
+            else
+                modeMap[el]++;
+            if (modeMap[el] > maxCount) {
+                maxEl = el;
+                maxCount = modeMap[el];
+            }
+        }
+        return maxEl;
+}
