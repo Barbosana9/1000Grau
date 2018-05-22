@@ -43,7 +43,7 @@
 
                         <div class="chart" id="chart">
 
-                            <div id="curve_chart" style="width:50%;"></div>
+                            <div id="curve_chart" style="width:100%; height:30%;"></div>
 
                         </div>
                         
@@ -53,25 +53,25 @@
                 <div class="row infos">
                         
                         <div class="col">
-                            <h6><span class="badge badge-info">Minima: <asp:Label runat="server" ID="LBLminima" Text="0.00" /></span></h6>
+                            <h6><span class="badge badge-info">Minima: <asp:Label runat="server" ID="LBLminima" Text="0.00 ºC" /></span></h6>
                         </div>
                         <div class="col">
-                            <h6><span class="badge badge-info">1 Quartil: <asp:Label ID="LBL1quartil" Text="0.00" runat="server" /></span></h6>
+                            <h6><span class="badge badge-info">1 Quartil: <asp:Label ID="LBL1quartil" Text="0.00 ºC" runat="server" /></span></h6>
                         </div>
                         <div class="col">
-                            <h6><span class="badge badge-info">Media: <asp:Label ID="LBLmedia" Text="0.00" runat="server" /></span></h6>
+                            <h6><span class="badge badge-info">Media: <asp:Label ID="LBLmedia" Text="0.00 ºC" runat="server" /></span></h6>
                         </div>
                         <div class="col">
-                            <h6><span class="badge badge-info">Moda: <asp:Label ID="LBLmoda" Text="0.00" runat="server" /></span></h6>
+                            <h6><span class="badge badge-info">Moda: <asp:Label ID="LBLmoda" Text="0.00 ºC" runat="server" /></span></h6>
                         </div>
                         <div class="col">
-                            <h6><span class="badge badge-info">Mediana <asp:Label ID="LBLmediana" Text="0.00" runat="server" /></span></h6>
+                            <h6><span class="badge badge-info">Mediana <asp:Label ID="LBLmediana" Text="0.00 ºC" runat="server" /></span></h6>
                         </div>
                         <div class="col">
-                            <h6><span class="badge badge-info">2 Quartil <asp:Label ID="LBL2quartil" Text="0.00" runat="server" /></span></h6>
+                            <h6><span class="badge badge-info">2 Quartil <asp:Label ID="LBL2quartil" Text="0.00 ºC" runat="server" /></span></h6>
                         </div>
                         <div class="col">
-                            <h6><span class="badge badge-info">Maxima: <asp:Label ID="LBLmaxima" Text="0.00" runat="server" /></span></h6>
+                            <h6><span class="badge badge-info">Maxima: <asp:Label ID="LBLmaxima" Text="0.00 ºC" runat="server" /></span></h6>
                         </div>
                     
                     </div>

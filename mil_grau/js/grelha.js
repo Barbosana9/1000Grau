@@ -79,13 +79,13 @@ function escreverMedias(temperatura) {
 
         temperaturas.sort(function (a, b) { return a - b });
 
-        $('#LBLmedia').text(calcularMedia().toFixed(1));
-        $('#LBL1quartil').text(calcularQuartil(1));
-        $('#LBLmoda').text(calcularModa().toFixed(1));
-        $('#LBLmediana').text(((temperaturas[49] + temperaturas[50]) / 2).toFixed(1));
-        $('#LBLminima').text(temperaturas[0].toFixed(1));
-        $('#LBL2quartil').text(calcularQuartil(2));
-        $('#LBLmaxima').text(temperaturas[98].toFixed(1));
+        $('#LBLmedia').text(calcularMedia().toFixed(1) + " ºC");
+        $('#LBL1quartil').text(calcularQuartil(1).toFixed(1) + " ºC");
+        $('#LBLmoda').text(calcularModa().toFixed(1) + " ºC");
+        $('#LBLmediana').text(((temperaturas[49] + temperaturas[50]) / 2).toFixed(1) + " ºC");
+        $('#LBLminima').text(temperaturas[0].toFixed(1) + " ºC");
+        $('#LBL2quartil').text(calcularQuartil(2).toFixed(1) + " ºC");
+        $('#LBLmaxima').text(temperaturas[98].toFixed(1) + " ºC");
     }
 
     i++;
@@ -100,18 +100,16 @@ function calcularMedia() {
 
     return media / 99;
 }
-function calcularMediana() {
-    return;
-}
+
 function calcularQuartil(qual) {
-    var quartil
 
     if (qual == 1) {
-
-    } else {
-
+        return temperaturas[25];
     }
-    return;
+    else {
+        return temperaturas[26];
+    }
+    return 0.00;
 }
 
 function calcularMaxima() {
