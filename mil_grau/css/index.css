@@ -1,6 +1,4 @@
-﻿body {
-}
-
+﻿
 #novoPreparo {
     position: fixed;
     transition: .5s ease;
@@ -9,10 +7,24 @@
 }
 
 
-#btnNovoPreparo {
-    z-index: 1;
-    position: fixed;
-    transition: .5s ease;
-    top: 88%;
-    left: 81%;
+/*#btnNovoPreparo {
+    color:powderblue;
+}*/
+
+.page{
+    display:none;
+}
+
+.page-active{
+    display:block;
+}
+
+.novaReceita{
+    margin-left:30%;
+    margin-top:10%;
+    width:40%;
+    height:100px;
+    border:solid;
+    border-color:black;
+    border-radius:4px;
 }

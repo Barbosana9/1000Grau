@@ -15,6 +15,6 @@ namespace mil_grau
 
         public double minima { get; set; }
 
-        public DateTime tempo_preparo { get; set; }
+        public int tempo_preparo { get; set; }
     }
 }

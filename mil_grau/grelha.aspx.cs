@@ -11,12 +11,28 @@ namespace mil_grau
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            novaReceitaPagina.Visible = false;
         }
 
         protected void btnNovoPreparo_Click(object sender, EventArgs e)
         {
+            btnNovoPreparo.Visible = false;
+            main.Visible = false;
+            novaReceitaPagina.Visible = true;
+
+            ConnectionFactory bancoDeDados = new ConnectionFactory();
+
+            List<ModelReceita> receitas = bancoDeDados.ObterReceita();
             
+            foreach(ModelReceita receita in receitas)
+            {
+
+                ListItem i = new ListItem(receita.nomeReceita, receita.cod_receita.ToString(), true);
+                DDLreceitas.Items.Add(i);
+
+            }
+
+                       
         }
 
         [System.Web.Services.WebMethod]
@@ -27,5 +43,9 @@ namespace mil_grau
             return double.Parse(bancoDeDados.getTempeture().ToString());
         }
 
+        protected void DDLreceitas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

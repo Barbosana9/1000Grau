@@ -27,15 +27,19 @@
 
         <div>
 
-            <div class="container" id="main">
+            <div class="container page page-active" id="main" runat="server">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-10">
                         <h1>Grelha <span id="displayTemp" class="badge badge-primary">
                             <asp:Label Text="0.00" runat="server" ID="average"/></span>
-                             
-
                         </h1>
                     </div>
+
+                    <div class="col-2">
+                        <asp:Button runat="server" Text="Novo Preparo" OnClick="btnNovoPreparo_Click" id="btnNovoPreparo" class="btn btn-outline-dark"></asp:Button>
+                       
+                    </div>
+
                 </div>
                 
                 <div class="row">
@@ -75,20 +79,15 @@
                         </div>
                     
                     </div>
-                        
+              </div>
 
-                <div class="row">
-                    <div class="col">
-                        <asp:Button runat="server" Text="Novo Preparo" OnClick="btnNovoPreparo_Click" id="btnNovoPreparo" class="btn btn-outline-dark"></asp:Button>
-                       
-                    </div>
+        </div>
 
-                </div>
-
-                        <asp:DropDownList ID="DropReceitas" runat="server" DataSourceID="SqlDataSource1" DataTextField="Nome" DataValueField="COD_Receita">
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=milgrau.database.windows.net;Initial Catalog=cardapio;User ID=picanha;Password=info@211" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Receita]"></asp:SqlDataSource>
-
+        <div class="novaReceita" id="novaReceitaPagina" runat="server">
+             
+            <div class="dropdown">
+                    
+                <asp:DropDownList ID="DDLreceitas" OnSelectedIndexChanged="DDLreceitas_SelectedIndexChanged" runat="server" ></asp:DropDownList>
 
             </div>
 

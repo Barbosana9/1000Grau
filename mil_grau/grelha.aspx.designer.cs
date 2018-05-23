@@ -22,6 +22,15 @@ namespace mil_grau {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// main control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl main;
+        
+        /// <summary>
         /// average control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace mil_grau {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label average;
+        
+        /// <summary>
+        /// btnNovoPreparo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNovoPreparo;
         
         /// <summary>
         /// LBLminima control.
@@ -94,30 +112,21 @@ namespace mil_grau {
         protected global::System.Web.UI.WebControls.Label LBLmaxima;
         
         /// <summary>
-        /// btnNovoPreparo control.
+        /// novaReceitaPagina control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNovoPreparo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl novaReceitaPagina;
         
         /// <summary>
-        /// DropReceitas control.
+        /// DDLreceitas control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropReceitas;
-        
-        /// <summary>
-        /// SqlDataSource1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.DropDownList DDLreceitas;
     }
 }
