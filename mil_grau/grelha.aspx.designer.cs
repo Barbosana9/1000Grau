@@ -121,6 +121,15 @@ namespace mil_grau {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl novaReceitaPagina;
         
         /// <summary>
+        /// BTNfecharSelecionarReceita control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTNfecharSelecionarReceita;
+        
+        /// <summary>
         /// DDLreceitas control.
         /// </summary>
         /// <remarks>

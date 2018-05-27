@@ -47,5 +47,16 @@ namespace mil_grau
         {
 
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void BTNfecharSelecionarReceita_Click(object sender, EventArgs e)
+        {
+            novaReceitaPagina.Visible = false;
+            main.Visible = true;
+        }
     }
 }

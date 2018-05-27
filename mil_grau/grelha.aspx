@@ -85,19 +85,37 @@
 
         <div class="novaReceita" id="novaReceitaPagina" runat="server">
              
-            <div class="dropdown">
-                    
-                <asp:DropDownList ID="DDLreceitas" OnSelectedIndexChanged="DDLreceitas_SelectedIndexChanged" runat="server" ></asp:DropDownList>
+
+            <div class="container">
+
+            <div class="row">
+
+                <div class="col-12">
+
+                    <asp:Button runat="server" OnClick="BTNfecharSelecionarReceita_Click"  ID="BTNfecharSelecionarReceita" CssClass="btn btn-danger" Text="Fechar" />
+
+                </div>
 
             </div>
 
+                <div class="row">
+
+                    <div class="dropdown">
+                    
+                        <asp:DropDownList ID="DDLreceitas" OnSelectedIndexChanged="DDLreceitas_SelectedIndexChanged" runat="server" ></asp:DropDownList>
+
+                    </div>
+                </div>
+               </div>
         </div>
+
     <script type="text/javascript" src="js\bootstrap.bundle.js"></script>
     <script type="text/javascript" src="js\bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="js\jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js\index.js"></script>
     <script type="text/javascript" src="js\grelha.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
     </form>
