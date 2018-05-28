@@ -35,12 +35,8 @@ class ArduinoDataRead {
             arduino.pipe(parser);
             
             parser.on('data', (data) => {
-				// inserirRegistro(data); // leitura em tempo real
-                this.listData.push(parseFloat(data));
-				
-				var sum = this.listData.reduce((a, b) => a + b, 0);
-				var average = (sum / this.listData.length).toFixed(2);
-				inserirRegistro(average);
+                inserirRegistro(parseFloat(data)); // leitura em tempo real
+
             });
             
         }).catch(error => console.log(error));
@@ -72,12 +68,32 @@ connection.on('connect', function(err) {
 
 var Request = require('tedious').Request  
 var TYPES = require('tedious').TYPES;  
+var valor = 0;
+var media = 0;
+var medidas = 0;
+var cont = 0;
 
-function inserirRegistro(valor) {  
-    request = new Request("EXECUTE insertTemp @valor;", function(err) {  
-     if (err) {  
-        console.log(err);}  
-    });  
-    request.addParameter('valor', TYPES.Float, valor);  
-    connection.execSql(request);  
-} 
+function inserirRegistro(temperatura) {  
+
+    medidas = (medidas + temperatura);
+    
+    
+    if(cont == 9){
+
+        valor = (medidas/10).toFixed(1);
+        
+        request = new Request("EXECUTE insertTemp @valor;", function(err) {  
+            if (err) {  
+               console.log(err);}  
+           });  
+           request.addParameter('valor', TYPES.Float, valor);  
+           connection.execSql(request);  
+
+ 
+        cont = 0;
+        medidas = temperatura;
+        
+    }
+
+    cont++;
+}
