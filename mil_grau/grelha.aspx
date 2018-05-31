@@ -20,6 +20,7 @@
                 <a class="p-2 text-dark" href="#">Home</a>
                 <a class="p-2 text-dark" href="#">Receitas</a>
                 <a class="p-2 text-dark" href="institucional.aspx">Institucional</a>
+                <a class="p-2 text-dark" href="https://nabrasa.freshdesk.com/">Suporte</a>
 
             </nav>
             <a class="btn btn-outline-primary" href="#">Sair</a>
@@ -31,55 +32,77 @@
                 <div class="row">
                     <div class="col-10">
                         <h1>Grelha <span id="displayTemp" class="badge badge-primary">
-                            <asp:Label Text="0.00" runat="server" ID="average"/></span>
+                            <asp:Label Text="0.00" runat="server" ID="average" /></span>
                         </h1>
                     </div>
 
                     <div class="col-2">
-                        <asp:Button runat="server" Text="Novo Preparo" OnClick="btnNovoPreparo_Click" id="btnNovoPreparo" class="btn btn-outline-dark"></asp:Button>
-                       
+                        <asp:Button runat="server" Text="Novo Preparo" OnClick="btnNovoPreparo_Click" ID="btnNovoPreparo" class="btn btn-outline-dark"></asp:Button>
+
                     </div>
 
                 </div>
-                
+
+                <div class="row" id="cardMonitor" runat="server">
+                    <div class="col-4">
+
+                        <div class="card">
+                            <h5 class="card-header">Featured</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-12">
 
                         <div class="chart" id="chart">
 
-                            <div id="curve_chart" style="width:100%; height:30%;"></div>
+                            <div id="curve_chart" style="width: 100%; height: 30%;"></div>
 
                         </div>
-                        
+
                     </div>
                 </div>
 
                 <div class="row infos">
-                        
-                        <div class="col">
-                            <h6><span class="badge badge-info">Minima: <asp:Label runat="server" ID="LBLminima" Text="0.00 ºC" /></span></h6>
-                        </div>
-                        <div class="col">
-                            <h6><span class="badge badge-info">1 Quartil: <asp:Label ID="LBL1quartil" Text="0.00 ºC" runat="server" /></span></h6>
-                        </div>
-                        <div class="col">
-                            <h6><span class="badge badge-info">Media: <asp:Label ID="LBLmedia" Text="0.00 ºC" runat="server" /></span></h6>
-                        </div>
-                        <div class="col">
-                            <h6><span class="badge badge-info">Moda: <asp:Label ID="LBLmoda" Text="0.00 ºC" runat="server" /></span></h6>
-                        </div>
-                        <div class="col">
-                            <h6><span class="badge badge-info">Mediana <asp:Label ID="LBLmediana" Text="0.00 ºC" runat="server" /></span></h6>
-                        </div>
-                        <div class="col">
-                            <h6><span class="badge badge-info">2 Quartil <asp:Label ID="LBL2quartil" Text="0.00 ºC" runat="server" /></span></h6>
-                        </div>
-                        <div class="col">
-                            <h6><span class="badge badge-info">Maxima: <asp:Label ID="LBLmaxima" Text="0.00 ºC" runat="server" /></span></h6>
-                        </div>
-                    
+
+                    <div class="col">
+                        <h6><span class="badge badge-info">Minima:
+                            <asp:Label runat="server" ID="LBLminima" Text="0.00 ºC" /></span></h6>
                     </div>
-              </div>
+                    <div class="col">
+                        <h6><span class="badge badge-info">1 Quartil:
+                            <asp:Label ID="LBL1quartil" Text="0.00 ºC" runat="server" /></span></h6>
+                    </div>
+                    <div class="col">
+                        <h6><span class="badge badge-info">Media:
+                            <asp:Label ID="LBLmedia" Text="0.00 ºC" runat="server" /></span></h6>
+                    </div>
+                    <div class="col">
+                        <h6><span class="badge badge-info">Moda:
+                            <asp:Label ID="LBLmoda" Text="0.00 ºC" runat="server" /></span></h6>
+                    </div>
+                    <div class="col">
+                        <h6><span class="badge badge-info">Mediana
+                            <asp:Label ID="LBLmediana" Text="0.00 ºC" runat="server" /></span></h6>
+                    </div>
+                    <div class="col">
+                        <h6><span class="badge badge-info">2 Quartil
+                            <asp:Label ID="LBL2quartil" Text="0.00 ºC" runat="server" /></span></h6>
+                    </div>
+                    <div class="col">
+                        <h6><span class="badge badge-info">Maxima:
+                            <asp:Label ID="LBLmaxima" Text="0.00 ºC" runat="server" /></span></h6>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
 
@@ -88,25 +111,42 @@
 
             <div class="container">
 
-            <div class="row">
-
-                <div class="col-12">
-
-                    <asp:Button runat="server" OnClick="BTNfecharSelecionarReceita_Click"  ID="BTNfecharSelecionarReceita" CssClass="btn btn-danger" Text="Fechar" />
-
-                </div>
-
-            </div>
-
+                
                 <div class="row">
 
-                    <div class="dropdown">
+                    <div class="col-12">
                     
-                        <asp:DropDownList ID="DDLreceitas" OnSelectedIndexChanged="DDLreceitas_SelectedIndexChanged" runat="server" ></asp:DropDownList>
+                        <h3 class="LabelNovaReceita">Escolha uma Receita</h3>
 
                     </div>
                 </div>
-               </div>
+
+                <div class="row">
+
+                    <div class="col-12">
+                    
+                        <asp:DropDownList ID="DDLreceitas" OnSelectedIndexChanged="DDLreceitas_SelectedIndexChanged" CssClass="ListaReceitas" runat="server" ></asp:DropDownList>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+
+                        <asp:Button runat="server" OnClick="BTNSelecionarReceita_Click"  ID="BTNSelecionarReceita" CssClass="btn btn-primary" Text="Monitorar" />
+
+                    </div>
+
+                    <div class="col-6">
+                
+                        <asp:Button runat="server" OnClick="BTNfecharSelecionarReceita_Click"  ID="BTNfecharSelecionarReceita" CssClass="btn btn-danger" Text="Fechar" />
+               
+                    </div>
+               
+                    
+                </div>
+             </div>
         </div>
 
     <script type="text/javascript" src="js\bootstrap.bundle.js"></script>
@@ -119,7 +159,7 @@
 
 
     </form>
-    
+
 
 </body>
 </html>

@@ -49,6 +49,15 @@ namespace mil_grau {
         protected global::System.Web.UI.WebControls.Button btnNovoPreparo;
         
         /// <summary>
+        /// cardMonitor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cardMonitor;
+        
+        /// <summary>
         /// LBLminima control.
         /// </summary>
         /// <remarks>
@@ -121,15 +130,6 @@ namespace mil_grau {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl novaReceitaPagina;
         
         /// <summary>
-        /// BTNfecharSelecionarReceita control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTNfecharSelecionarReceita;
-        
-        /// <summary>
         /// DDLreceitas control.
         /// </summary>
         /// <remarks>
@@ -137,5 +137,23 @@ namespace mil_grau {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DDLreceitas;
+        
+        /// <summary>
+        /// BTNSelecionarReceita control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTNSelecionarReceita;
+        
+        /// <summary>
+        /// BTNfecharSelecionarReceita control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BTNfecharSelecionarReceita;
     }
 }

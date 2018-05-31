@@ -11,7 +11,24 @@ namespace mil_grau
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             novaReceitaPagina.Visible = false;
+            cardMonitor.Visible = false;
+
+            if (!IsPostBack)
+            {
+                ConnectionFactory bancoDeDados = new ConnectionFactory();
+
+                List<ModelReceita> receitas = bancoDeDados.ObterReceita();
+
+                foreach (ModelReceita receita in receitas)
+                {
+
+                    ListItem i = new ListItem(receita.nomeReceita, receita.cod_receita.ToString(), true);
+                    DDLreceitas.Items.Add(i);
+
+                }
+            }
         }
 
         protected void btnNovoPreparo_Click(object sender, EventArgs e)
@@ -19,20 +36,7 @@ namespace mil_grau
             btnNovoPreparo.Visible = false;
             main.Visible = false;
             novaReceitaPagina.Visible = true;
-
-            ConnectionFactory bancoDeDados = new ConnectionFactory();
-
-            List<ModelReceita> receitas = bancoDeDados.ObterReceita();
-            
-            foreach(ModelReceita receita in receitas)
-            {
-
-                ListItem i = new ListItem(receita.nomeReceita, receita.cod_receita.ToString(), true);
-                DDLreceitas.Items.Add(i);
-
-            }
-
-                       
+                                  
         }
 
         [System.Web.Services.WebMethod]
@@ -57,6 +61,14 @@ namespace mil_grau
         {
             novaReceitaPagina.Visible = false;
             main.Visible = true;
+            btnNovoPreparo.Visible = true;
+        }
+
+        protected void BTNSelecionarReceita_Click(object sender, EventArgs e)
+        {
+            novaReceitaPagina.Visible = true;
+            main.Visible = true;
+            cardMonitor.Visible = true;
         }
     }
 }

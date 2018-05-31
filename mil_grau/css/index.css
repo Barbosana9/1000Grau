@@ -23,13 +23,35 @@
     margin-left:30%;
     margin-top:10%;
     width:40%;
-    height:100px;
+    height:150px;
     border:solid;
     border-color:black;
     border-radius:4px;
+    border-width:thin;
+}
+
+.LabelNovaReceita{
+    margin-top:2%;
+    margin-left:25%;
 }
 #BTNfecharSelecionarReceita{
+    margin-top:5%;
+    width:100%;
     float:right;
-    
+   
+ }
 
+#BTNSelecionarReceita {
+    margin-top: 5%;
+    float: left;
+    width: 100%;
+}
+
+.ListaReceitas{
+    margin-top:1.5%;
+    width:100%;
+}
+
+#cardMonitor{
+    float:left;
 }
