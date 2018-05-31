@@ -66,7 +66,7 @@ namespace mil_grau
 
         protected void BTNSelecionarReceita_Click(object sender, EventArgs e)
         {
-            novaReceitaPagina.Visible = true;
+           
             main.Visible = true;
             cardMonitor.Visible = true;
         }

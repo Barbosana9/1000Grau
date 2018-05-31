@@ -58,6 +58,42 @@ namespace mil_grau {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cardMonitor;
         
         /// <summary>
+        /// lblNomeReceita control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNomeReceita;
+        
+        /// <summary>
+        /// lblTempoPreparo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTempoPreparo;
+        
+        /// <summary>
+        /// lblTempMinima control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTempMinima;
+        
+        /// <summary>
+        /// lblTempMaxima control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTempMaxima;
+        
+        /// <summary>
         /// LBLminima control.
         /// </summary>
         /// <remarks>
