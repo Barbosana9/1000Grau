@@ -3,7 +3,11 @@
     google.charts.load('current', { packages: ['corechart', 'line'] });
     google.charts.setOnLoadCallback(drawChart);
     //mandando obter a temperatura no bando de dados
-    getActualTemp();
+
+    setInterval(() => {
+        getActualTemp();
+    }, 1000);
+
 });
 
 //função que muda a cor da temperatura
@@ -25,17 +29,20 @@ function changeTempColor(avarange, min, max) {
 
 
 function getActualTemp() {
-    $.ajax({
-        type: "POST",
-        url: "../grelha.aspx/getTempeture",
-        data: '{}',
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: OnSuccess,
-        failure: function (response) {
-            alert(response.d);
-        }
-    });
+    setTimeout(
+        function acessarBanco() {
+            $.ajax({
+                type: "POST",
+                url: "../grelha.aspx/getTempeture",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSuccess,
+                failure: function (response) {
+                    alert(response.d);
+                }
+            });
+        }, 500);
 }
 function OnSuccess(response) {
     changeTempColor(response.d, 0.0, 30.0);
@@ -44,12 +51,8 @@ function OnSuccess(response) {
     drawChart(response.d);
 }
 
-setInterval(() => {
-    getActualTemp();
-}, 1000);
-
 //apartir daqui todo relacionado ao grafico
-var data = null, grafico = null, total = 1;
+var data = null, grafico = null, total = 0;
 
 function drawChart(temp) {
 
@@ -59,13 +62,28 @@ function drawChart(temp) {
         data.addColumn('number', 'ºC');
     }
 
+    if (total > 5) {
+        data.removeRow(0);
+    }
+
     data.addRows([[total, temp]]);
 
-    grafico = new google.visualization.LineChart(document.getElementById('curve_chart'));
-    grafico.draw(data, { title: "Temperaturas em Tempo Real" });
+
+
+    grafico = new google.visualization.LineChart(document.getElementById('chart'));
+    grafico.draw(data, {
+        width: 550,
+        height: 400,
+        'chartArea': { 'width': '90%', 'height': '80%' },
+        'legend': { 'position': 'bottom' },
+        title: "Temperaturas em Tempo Real"});
 
     total++;
-    escreverMedias(temp);
+
+    if (total != 1) {
+        console.log(parseFloat(temp.toString()).toFixed(1))
+        escreverMedias(parseFloat(temp.toString()).toFixed(1));
+    }
 }
 
 var temperaturas = [100];
@@ -73,19 +91,20 @@ var i = 0;
 
 function escreverMedias(temperatura) {
     temperaturas[i] = temperatura;
-    
-    if (i == 99) {
-        i = 0;
 
+    if (i > 99) {
+
+        i = 0;
         temperaturas.sort(function (a, b) { return a - b });
 
-        $('#LBLmedia').text(calcularMedia().toFixed(1) + " ºC");
-        $('#LBL1quartil').text(calcularQuartil(1).toFixed(1) + " ºC");
-        $('#LBLmoda').text(calcularModa().toFixed(1) + " ºC");
-        $('#LBLmediana').text(((temperaturas[49] + temperaturas[50]) / 2).toFixed(1) + " ºC");
-        $('#LBLminima').text(temperaturas[0].toFixed(1) + " ºC");
-        $('#LBL2quartil').text(calcularQuartil(2).toFixed(1) + " ºC");
-        $('#LBLmaxima').text(temperaturas[98].toFixed(1) + " ºC");
+        $('#LBLmedia').text(calcularMedia() + " ºC");
+        $('#LBLminima').text(temperaturas[0] + " ºC");
+        $('#LBL1quartil').text(temperaturas[24] + " ºC");
+        $('#LBLmoda').text(calcularModa() + " ºC");
+        $('#LBLmediana').text(calcularMediana(temperaturas[49], temperaturas[50]) + " ºC");
+        $('#LBL2quartil').text(temperaturas[74] + " ºC");
+        $('#LBLmaxima').text(temperaturas[99]+ " ºC");
+               
     }
 
     i++;
@@ -94,11 +113,11 @@ function escreverMedias(temperatura) {
 function calcularMedia() {
     var media = 0;
 
-    for (i = 0; i < 99; i++) {
-        media = media + temperaturas[i]
+    for (u = 0; u < 100; u++) {
+        media = media + parseFloat(temperaturas[u]);
     }
 
-    return media / 99;
+    return media / 100.0;
 }
 
 function calcularQuartil(qual) {
@@ -112,30 +131,28 @@ function calcularQuartil(qual) {
     return 0.00;
 }
 
-function calcularMaxima() {
-    
-}
-function calcularMinima() {
-    return;
-}
 function calcularModa() {
 
     var array = temperaturas;
 
-        if (array.length == 0)
-            return null;
-        var modeMap = {};
-        var maxEl = array[0], maxCount = 1;
-        for (var i = 0; i < array.length; i++) {
-            var el = array[i];
-            if (modeMap[el] == null)
-                modeMap[el] = 1;
-            else
-                modeMap[el]++;
-            if (modeMap[el] > maxCount) {
-                maxEl = el;
-                maxCount = modeMap[el];
-            }
+    if (array.length == 0)
+        return null;
+    var modeMap = {};
+    var maxEl = array[0], maxCount = 1;
+    for (var i = 0; i < array.length; i++) {
+        var el = array[i];
+        if (modeMap[el] == null)
+            modeMap[el] = 1;
+        else
+            modeMap[el]++;
+        if (modeMap[el] > maxCount) {
+            maxEl = el;
+            maxCount = modeMap[el];
         }
-        return maxEl;
+    }
+    return maxEl;
+}
+
+function calcularMediana(v1,v2){
+    return ((parseFloat(v1) + parseFloat(v2)) / 2);
 }
