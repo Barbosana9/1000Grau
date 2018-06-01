@@ -1,15 +1,57 @@
 ﻿body {
-   
+    /*background: url(neve.png); /* adicionar imagem no fundo */
+    /*background-size: cover;*/ /* size ajusta o tamanhod a imagem|
+                              cover redimenciona para que não hja espaços em branco 
+                              e mantem as proporçoes originais*/
+    background: #ff6a00; /* adicionar cor ao fundo */
+    border-radius: 5px; /* arredondar as bordas */
+    padding: 20px; /* espaçamento interno*/
+    width: 420px; /* largura */
+    margin: auto; /*espaçamento externo*/
+    color: #fff; /* cor*/
+    font-size: 16px; /* define o tamanho de uma fonte*/
+    font-family: Verdana; /*define o estilo da fonte*/
+    margin-top: 150px; /* espaçamento superior*/
+    opacity: 0.8;
+    border-color:red;
+    border: 50px;
+    
+}
+div {
     background-color: white;
-    padding: 10px;
-    padding-left: 30px;
-    padding-top: 10px;
-    height: 50%;
-    width: 15%;
-    float: left;
-    position:center;
+    border-bottom-style: solid;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-radius: 10px;
+
+}
+form {
+    text-align:center;
+}
+label,input {
+   width:50%;
+}
+button{
+    width:70%;
+}
+.acesso {
+    color: black;
+    text-align:center;
+
 }
 
-
-
-
+.id {
+    color: black;
+    text-align: center;
+}
+.entrar {
+    color: black;
+    border: none;
+    
+    
+}
+.form-control {
+    color: black;
+    text-align: center;
+}
