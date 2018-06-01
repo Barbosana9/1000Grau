@@ -81,7 +81,7 @@ function drawChart(temp) {
     total++;
 
     if (total != 1) {
-        console.log(parseFloat(temp.toString()).toFixed(1))
+        //console.log(parseFloat(temp.toString()).toFixed(1))
         escreverMedias(parseFloat(temp.toString()).toFixed(1));
     }
 }
