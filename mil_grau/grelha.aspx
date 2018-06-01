@@ -13,6 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
 
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
             <h5 class="my-0 mr-md-auto font-weight-normal">Mil Grau</h5>
@@ -43,28 +44,33 @@
 
             <div class="row">
                 <div class="col-6">
-                    <div class="chart" id="chart"></div>
+                    <div class="chart" id="chart">
+                    </div>
                 </div>
 
                 <div class="col-6" id="cardMonitor" runat="server">
 
-                    <div class="card">
-                        <h5 class="card-header"><asp:Label Text="NomeReceita" ID="lblNomeReceita" runat="server"></asp:Label></h5>
-                        <div class="card-body">
-                            <h5 class="card-title"><asp:Label Text="00:00:00" ID="lblTempoPreparo" runat="server"></asp:Label></h5>
-
-
-                            <p class="card-text">
-
-                                <h6>Temperatura Minima: <asp:Label Text="tempMinima" ID="lblTempMinima" runat="server"></asp:Label></h6> <br />
-
-                                <h6>Temperatura Maxima: <asp:Label Text="tempMaxima" ID="lblTempMaxima" runat="server"></asp:Label></h6> <br />
-
-                            </p>
-                        
-                        </div>
-                    </div>
-
+                    <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+                        </Triggers>
+                        <ContentTemplate>
+                            <div class="card">
+                                <h5 class="card-header">
+                                    <asp:Label Text="NomeReceita" ID="lblNomeReceita" runat="server"></asp:Label></h5>
+                                <div class="card-body">
+                                    
+                                        <asp:Label Text="00:00:00" ID="lblTempoPreparo" runat="server"></asp:Label>
+                                <p class="card-text">
+                                        Temperatura Minima:<asp:Label Text="tempMinima" ID="lblTempMinima" runat="server"></asp:Label>
+                                        <br />
+                                        Temperatura Maxima:<asp:Label Text="tempMaxima" ID="lblTempMaxima" runat="server"></asp:Label>
+                                        <br />
+                                    </p>
+                                </div>
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </div>
 
             </div>
@@ -156,7 +162,12 @@
         <script type="text/javascript" src="js\index.js"></script>
         <script type="text/javascript" src="js\grelha.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <div>
+            <asp:Timer ID="Timer1" OnTick="Timer1_Tick" Enabled="false" runat="server" Interval="1000">
+            </asp:Timer>
+        </div>
+
     </form>
 
 

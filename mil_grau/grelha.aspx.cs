@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
+
 namespace mil_grau
 {
     public partial class grelha : System.Web.UI.Page
@@ -66,9 +68,33 @@ namespace mil_grau
 
         protected void BTNSelecionarReceita_Click(object sender, EventArgs e)
         {
-           
             main.Visible = true;
             cardMonitor.Visible = true;
+
+            ConnectionFactory connection = new ConnectionFactory();
+
+            ModelReceita receitaSelecionada = connection.ObterReceita(int.Parse(DDLreceitas.SelectedItem.Value));
+
+            lblNomeReceita.Text = receitaSelecionada.nomeReceita;
+            lblTempMinima.Text = receitaSelecionada.minima.ToString();
+            lblTempMaxima.Text = receitaSelecionada.maxima.ToString();
+
+            Session["tempoPreparo"] = (receitaSelecionada.tempo_preparo * 1000.0);
+
+            //TmrTempPreparo.Interval = 1000;
+            Timer1.Enabled = true;
+                        
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            double tempoRestante = double.Parse(Session["tempoPreparo"].ToString());
+
+            lblTempoPreparo.Text = "Horas: " + DateTime.Now.ToLongTimeString();
+            UpdatePanel1.Update();
+            
+            Session["tempoPreparo"] = tempoRestante - 1000.0;
+
         }
     }
 }
