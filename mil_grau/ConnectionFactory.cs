@@ -115,5 +115,37 @@ namespace mil_grau
 
             }
         }
+
+        public ModelReceita ObterReceita(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = $"SELECT * FROM receita WHERE cod_receita = {id}";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+
+                SqlDataReader receitas = command.ExecuteReader();
+
+                List<ModelReceita> listaDeRecitas = new List<ModelReceita>();
+
+                ModelReceita receita = new ModelReceita();
+
+                while (receitas.Read())
+                {
+                    receita.cod_receita = int.Parse(receitas["cod_receita"].ToString());
+                    receita.nomeReceita = receitas["Nome"].ToString();
+                    receita.maxima = double.Parse(receitas["Maxima"].ToString());
+                    receita.minima = double.Parse(receitas["Minima"].ToString());
+                    receita.tempo_preparo = int.Parse(receitas["Tempo_preparo"].ToString());  
+                }
+
+                connection.Close();
+
+                return receita;
+
+            }
+        }
     }
 }
