@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="grelha.aspx.cs" Inherits="mil_grau.grelha" %>
 
 <!DOCTYPE html>
-
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Monitor</title>
