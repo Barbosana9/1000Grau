@@ -54,16 +54,6 @@ namespace mil_grau
             return double.Parse(bancoDeDados.getTempeture().ToString());
         }
 
-        protected void DDLreceitas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Unnamed_Click(object sender, EventArgs e)
-        {
-
-        }
-
         protected void BTNfecharSelecionarReceita_Click(object sender, EventArgs e)
         {
             novaReceitaPagina.Visible = false;

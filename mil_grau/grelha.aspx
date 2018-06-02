@@ -1,12 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="grelha.aspx.cs" Inherits="mil_grau.grelha" %>
 
 <!DOCTYPE html>
-<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<meta name='viewport' content='width=device-width, initial-scale=1' />
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Monitor</title>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="css\bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css\bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="css\index.css" type="text/css" />
@@ -121,50 +121,28 @@
                                         <asp:Label ID="LBLmaxima" Text="0.00 ºC" runat="server" /></li>
                                 </ul>
                             </div>
-
                         </div>
-
                     </div>
-
-
+                    
                     <div class="novaReceita" id="novaReceitaPagina" runat="server">
-
-
                         <div class="container">
-
-
                             <div class="row">
-
                                 <div class="col-12">
-
                                     <h3 class="LabelNovaReceita">Escolha uma Receita</h3>
-
                                 </div>
                             </div>
-
                             <div class="row">
-
                                 <div class="col-12">
-
-                                    <asp:DropDownList ID="DDLreceitas" OnSelectedIndexChanged="DDLreceitas_SelectedIndexChanged" CssClass="ListaReceitas" runat="server"></asp:DropDownList>
-
+                                    <asp:DropDownList ID="DDLreceitas" CssClass="ListaReceitas" runat="server"></asp:DropDownList>
                                 </div>
                             </div>
-
                             <div class="row">
-
                                 <div class="col-6">
-
                                     <asp:Button runat="server" OnClick="BTNSelecionarReceita_Click" ID="BTNSelecionarReceita" CssClass="btn btn-primary" Text="Monitorar" />
-
                                 </div>
-
                                 <div class="col-6">
-
                                     <asp:Button runat="server" OnClick="BTNfecharSelecionarReceita_Click" ID="BTNfecharSelecionarReceita" CssClass="btn btn-danger" Text="Fechar" />
-
                                 </div>
-
 
                             </div>
                         </div>
@@ -174,10 +152,6 @@
 
             </main>
         </div>
-
-
-
-
 
         <script type="text/javascript" src="js\bootstrap.bundle.js"></script>
         <script type="text/javascript" src="js\bootstrap.bundle.min.js"></script>
@@ -191,12 +165,6 @@
             <asp:Timer ID="Timer1" OnTick="Timer1_Tick" Enabled="false" runat="server" Interval="1000">
             </asp:Timer>
         </div>
-
-        <script type="text/javascript">
-                function monitorar() {
-                    alert("hey funciona");
-                }
-        </script>
 
     </form>
 
