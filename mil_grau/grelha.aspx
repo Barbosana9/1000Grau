@@ -71,9 +71,10 @@
                                     <h5 class="card-header">
                                         <asp:Label Text="NomeReceita" ID="lblNomeReceita" runat="server"></asp:Label></h5>
                                     <div class="card-body">
+                                        
+                                        <h5 class="card-title">
 
-                                        <p class="card-text">
-
+                                            <label for="lblTempoPreparo">Tempo Restante: </label>
                                             <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
                                                 <Triggers>
                                                     <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
@@ -82,14 +83,14 @@
                                                     <asp:Label Text="00:00:00" ID="lblTempoPreparo" runat="server"></asp:Label>
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
-
-                                            <h6>Temperatura Minima:
-                                            <asp:Label Text="tempMinima" ID="lblTempMinima" runat="server"></asp:Label></h6>
-                                            <br />
-                                            <h6>Temperatura Maxima:
-                                            <asp:Label Text="tempMaxima" ID="lblTempMaxima" runat="server"></asp:Label></h6>
-                                            <br />
-                                        </p>
+                                        
+                                            <label for="lblTempMinama">Temperatura Minima: </label>
+                                            <asp:Label Text="tempMinima" ID="lblTempMinima" runat="server"></asp:Label>
+                                            
+                                            <label for="lbltempMaxima">Temperatura Maxima: </label>
+                                            <asp:Label Text="tempMaxima" ID="lblTempMaxima" runat="server"></asp:Label>
+                                            
+                                        </h5>
                                     </div>
                                 </div>
 

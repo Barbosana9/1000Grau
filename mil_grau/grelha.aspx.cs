@@ -79,8 +79,8 @@ namespace mil_grau
             ModelReceita receitaSelecionada = connection.ObterReceita(int.Parse(DDLreceitas.SelectedItem.Value));
 
             lblNomeReceita.Text = receitaSelecionada.nomeReceita;
-            lblTempMinima.Text = (receitaSelecionada.minima.ToString()+ " ºC");
-            lblTempMaxima.Text = (receitaSelecionada.maxima.ToString()+ " ºC");
+            lblTempMinima.Text = (receitaSelecionada.minima.ToString()+ " Graus Celsius");
+            lblTempMaxima.Text = (receitaSelecionada.maxima.ToString()+ " Graus Celsius");
 
             Session["tempoPreparo"] = ((receitaSelecionada.tempo_preparo * 60) * 1000);
 
@@ -93,10 +93,24 @@ namespace mil_grau
             double tempoRestante = (double.Parse(Session["tempoPreparo"].ToString()) - 1000.0);
             Session["tempoPreparo"] = tempoRestante;
 
-            double real = (tempoRestante / 1000)/60;
+            DateTime restante = new DateTime(2018, 1, 1, 0, 0, 0);
 
-            lblTempoPreparo.Text = real.ToString()+" Tempo Restante: " + tempoRestante.ToString(); 
+            restante = restante.AddMilliseconds(tempoRestante);
+            
+            lblTempoPreparo.Text = restante.ToString("HH:mm:ss");
+
             UpdatePanel1.Update();
+
+            if(tempoRestante <= 0)
+            {
+                Timer1.Enabled = false;
+                finalizarPreparo();
+            }
+        }
+
+        private void finalizarPreparo()
+        {
+            throw new NotImplementedException();
         }
     }
 }
