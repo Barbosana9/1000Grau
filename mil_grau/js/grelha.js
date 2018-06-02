@@ -72,8 +72,8 @@ function drawChart(temp) {
 
     grafico = new google.visualization.LineChart(document.getElementById('chart'));
     grafico.draw(data, {
-        width: 550,
-        height: 400,
+        //width: 650,
+        //height: 400,
         'chartArea': { 'width': '90%', 'height': '80%' },
         'legend': { 'position': 'bottom' },
         title: "Temperaturas em Tempo Real"});

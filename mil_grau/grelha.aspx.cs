@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,7 +16,6 @@ namespace mil_grau
         {
 
             novaReceitaPagina.Visible = false;
-            cardMonitor.Visible = false;
 
             if (!IsPostBack)
             {
@@ -30,6 +30,9 @@ namespace mil_grau
                     DDLreceitas.Items.Add(i);
 
                 }
+
+                cardMonitor.Visible = false;
+                Timer1.Enabled = false;
             }
         }
 
@@ -70,31 +73,30 @@ namespace mil_grau
         {
             main.Visible = true;
             cardMonitor.Visible = true;
-
+            
             ConnectionFactory connection = new ConnectionFactory();
 
             ModelReceita receitaSelecionada = connection.ObterReceita(int.Parse(DDLreceitas.SelectedItem.Value));
 
             lblNomeReceita.Text = receitaSelecionada.nomeReceita;
-            lblTempMinima.Text = receitaSelecionada.minima.ToString();
-            lblTempMaxima.Text = receitaSelecionada.maxima.ToString();
+            lblTempMinima.Text = (receitaSelecionada.minima.ToString()+ " ºC");
+            lblTempMaxima.Text = (receitaSelecionada.maxima.ToString()+ " ºC");
 
-            Session["tempoPreparo"] = (receitaSelecionada.tempo_preparo * 1000.0);
+            Session["tempoPreparo"] = ((receitaSelecionada.tempo_preparo * 60) * 1000);
 
-            //TmrTempPreparo.Interval = 1000;
+            Timer1.Interval = 1000;
             Timer1.Enabled = true;
-                        
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            double tempoRestante = double.Parse(Session["tempoPreparo"].ToString());
+            double tempoRestante = (double.Parse(Session["tempoPreparo"].ToString()) - 1000.0);
+            Session["tempoPreparo"] = tempoRestante;
 
-            lblTempoPreparo.Text = "Horas: " + DateTime.Now.ToLongTimeString();
+            double real = (tempoRestante / 1000)/60;
+
+            lblTempoPreparo.Text = real.ToString()+" Tempo Restante: " + tempoRestante.ToString(); 
             UpdatePanel1.Update();
-            
-            Session["tempoPreparo"] = tempoRestante - 1000.0;
-
         }
     }
 }
