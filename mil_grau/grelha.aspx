@@ -123,31 +123,28 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="novaReceita" id="novaReceitaPagina" runat="server">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h3 class="LabelNovaReceita">Escolha uma Receita</h3>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <asp:DropDownList ID="DDLreceitas" CssClass="ListaReceitas" runat="server"></asp:DropDownList>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <asp:Button runat="server" OnClick="BTNSelecionarReceita_Click" ID="BTNSelecionarReceita" CssClass="btn btn-primary" Text="Monitorar" />
-                                </div>
-                                <div class="col-6">
-                                    <asp:Button runat="server" OnClick="BTNfecharSelecionarReceita_Click" ID="BTNfecharSelecionarReceita" CssClass="btn btn-danger" Text="Fechar" />
-                                </div>
 
+                    <div class="novaReceita mdl-grid" id="novaReceitaPagina" runat="server">
+                        
+
+                            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-phone mdl-cell--8-col-tablet">
+                                <h3 class="LabelNovaReceita">Escolha uma Receita</h3>
                             </div>
+
+                            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--6-col-phone mdl-cell--8-col-tablet">
+                                <asp:DropDownList ID="DDLreceitas" CssClass="ListaReceitas" runat="server"></asp:DropDownList>
+                            </div>
+
+
+                            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-phone mdl-cell--4-col-tablet">
+                                <asp:Button runat="server" OnClick="BTNSelecionarReceita_Click" ID="BTNSelecionarReceita" CssClass="btn btn-primary" Text="Monitorar" />
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-phone mdl-cell--4-col-tablet">
+                                <asp:Button runat="server" OnClick="BTNfecharSelecionarReceita_Click" ID="BTNfecharSelecionarReceita" CssClass="btn btn-danger" Text="Fechar" />
+                            </div>
+
                         </div>
-                    </div>
-
+                   
                 </div>
 
             </main>
