@@ -6,7 +6,7 @@
 
     setInterval(() => {
         getActualTemp();
-    }, 1000);
+    }, 3000);
 
 });
 
@@ -42,13 +42,16 @@ function getActualTemp() {
                     alert(response.d);
                 }
             });
-        }, 500);
+        }, 1000);
 }
 function OnSuccess(response) {
-    changeTempColor(response.d, 0.0, 30.0);
     document.getElementById('displayTemp').textContent = response.d.toFixed(1) + " ºC";
     //atualizando os valores do grafico
     drawChart(response.d);
+
+    if (monitoramento.maxima != null && monitoramento.minima != null) {
+        changeTempColor(response.d, monitoramento.minima, monitoramento.maxima);
+    }
 }
 
 //apartir daqui todo relacionado ao grafico
@@ -156,3 +159,15 @@ function calcularModa() {
 function calcularMediana(v1,v2){
     return ((parseFloat(v1) + parseFloat(v2)) / 2);
 }
+
+var monitoramento = [];
+monitoramento.maxima = null;
+monitoramento.minima = null;
+
+function definirTemperaturas(minima, maxima) {
+    monitoramento.maxima = parseFloat(maxima);
+    monitoramento.minima = parseFloat(minima);
+}
+
+
+

@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Monitor</title>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" href="css\bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css\bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="css\index.css" type="text/css" />
@@ -65,16 +66,15 @@
                         <div class="mdl-grid">
 
 
-                            <div class="mdl-cell mdl-cell--4-col" id="cardMonitor" runat="server">
+                            <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-phone mdl-cell--8-col-tablet" id="cardMonitor" runat="server">
 
                                 <div class="card">
                                     <h5 class="card-header">
                                         <asp:Label Text="NomeReceita" ID="lblNomeReceita" runat="server"></asp:Label></h5>
                                     <div class="card-body">
-                                        
+
                                         <h5 class="card-title">
 
-                                            <label for="lblTempoPreparo">Tempo Restante: </label>
                                             <asp:UpdatePanel ID="UpdatePanel1" UpdateMode="Conditional" runat="server">
                                                 <Triggers>
                                                     <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
@@ -83,13 +83,14 @@
                                                     <asp:Label Text="00:00:00" ID="lblTempoPreparo" runat="server"></asp:Label>
                                                 </ContentTemplate>
                                             </asp:UpdatePanel>
-                                        
-                                            <label for="lblTempMinama">Temperatura Minima: </label>
+                                            <br />
+                                            <br />
+                                            <label for="lblTempMinama">Minima: </label>
                                             <asp:Label Text="tempMinima" ID="lblTempMinima" runat="server"></asp:Label>
-                                            
-                                            <label for="lbltempMaxima">Temperatura Maxima: </label>
+                                            <br />
+                                            <label for="lbltempMaxima">Maxima: </label>
                                             <asp:Label Text="tempMaxima" ID="lblTempMaxima" runat="server"></asp:Label>
-                                            
+
                                         </h5>
                                     </div>
                                 </div>
@@ -97,7 +98,7 @@
                             </div>
 
 
-                            <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone mdl-cell-8-col-tablet" runat="server" id="chart_div">
+                            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--6-col-phone mdl-cell--8-col-tablet" runat="server" id="chart_div">
                                 <div class="chart" id="chart" style="width: 100%; height: 100%;">
                                 </div>
                             </div>
@@ -190,6 +191,12 @@
             <asp:Timer ID="Timer1" OnTick="Timer1_Tick" Enabled="false" runat="server" Interval="1000">
             </asp:Timer>
         </div>
+
+        <script type="text/javascript">
+                function monitorar() {
+                    alert("hey funciona");
+                }
+        </script>
 
     </form>
 

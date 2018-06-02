@@ -33,6 +33,8 @@ namespace mil_grau
 
                 cardMonitor.Visible = false;
                 Timer1.Enabled = false;
+                Session.Abandon();
+                Session.Clear();
             }
         }
 
@@ -84,12 +86,27 @@ namespace mil_grau
 
             Session["tempoPreparo"] = ((receitaSelecionada.tempo_preparo * 60) * 1000);
 
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "clearControls", $"definirTemperaturas({receitaSelecionada.minima.ToString()},{receitaSelecionada.maxima.ToString()});", true);
+
+            //tudo relacionado a cookies
+            //HttpCookie cookie = new HttpCookie("tempoPreparo", ((receitaSelecionada.tempo_preparo * 60) * 1000).ToString());
+            //cookie.Expires = DateTime.MinValue;
+            //response.Cookies.Set(cookie);
+
             Timer1.Interval = 1000;
             Timer1.Enabled = true;
+
         }
 
         protected void Timer1_Tick(object sender, EventArgs e)
         {
+            //tudo relacionado a cookies
+            //HttpCookie cookie = Request.Cookies["tempoPreparo"];
+            //double tempoRestante = (double.Parse(cookie.Value.ToString())-1000.0);
+            //cookie.Expires = DateTime.MinValue;
+            //cookie.Value = tempoRestante.ToString();
+            //Response.Cookies.Set(cookie);
+
             double tempoRestante = (double.Parse(Session["tempoPreparo"].ToString()) - 1000.0);
             Session["tempoPreparo"] = tempoRestante;
 
@@ -99,9 +116,9 @@ namespace mil_grau
             
             lblTempoPreparo.Text = restante.ToString("HH:mm:ss");
 
-            UpdatePanel1.Update();
+            UpdatePanel1.Update();   
 
-            if(tempoRestante <= 0)
+            if (tempoRestante <= 0)
             {
                 Timer1.Enabled = false;
                 finalizarPreparo();
