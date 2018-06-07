@@ -3,19 +3,18 @@
     /*background-size: cover;*/ /* size ajusta o tamanhod a imagem|
                               cover redimenciona para que não hja espaços em branco 
                               e mantem as proporçoes originais*/
-    background: #ff6a00; /* adicionar cor ao fundo */
+    background: rgba(179,0,0,240); /* adicionar cor ao fundo */
     border-radius: 5px; /* arredondar as bordas */
     padding: 20px; /* espaçamento interno*/
     width: 420px; /* largura */
     margin: auto; /*espaçamento externo*/
-    color: #fff; /* cor*/
+    color: #212529; /* cor*/
     font-size: 16px; /* define o tamanho de uma fonte*/
     font-family: Verdana; /*define o estilo da fonte*/
     margin-top: 150px; /* espaçamento superior*/
     opacity: 0.8;
-    border-color:red;
+    border-color: red;
     border: 50px;
-    
 }
 div {
     background-color: white;
