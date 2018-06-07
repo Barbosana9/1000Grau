@@ -11,16 +11,25 @@
   <body class="text-center" >
      <div>
          <h1 class="acesso"> Acesso </h1>
-        <form class="form-signin" action="institucional.html">   
+
+        <form id="form1" runat ="server">
+            
             <img class="mb-4" src="#" alt="" width="72" height="72">             
             
             <br />
             
-            <label for="inputID" class="id">ID </label >                 
-            <input id="inputid" class="form-control" placeholder="Codigo Arduino" >                                
-            <br /> <br />
-            <button class="entrar" type="submit"> Entrar </button>
+            <label for="inputID" class="id">ID </label >    
             
+
+            <asp:Textbox runat="server"  ID="txtCod" class="form-control" placeholder="Codigo Arduino"/> 
+            
+            <asp:Label runat="server" ID="lblErro" /> 
+            
+
+            <br /> <br />
+            <asp:Button runat="server" ID="btnLogar" Text="Entrar" OnClick="btnLogar_Click" class="entrar"/>
+
+
         </form>
       </div>
  
