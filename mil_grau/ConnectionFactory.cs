@@ -37,6 +37,23 @@ namespace mil_grau
             }
         }
 
+        internal void InserirReceita(ModelReceita Receita)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = $"INSERT INTO receita VALUES ('{Receita.nomeReceita}',{Receita.maxima},{Receita.minima},{Receita.tempo_preparo},1000)";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+
+                command.ExecuteNonQuery();
+
+                connection.Close();           
+
+            }
+        }
+
         public bool Login(string acesso)
         {
 

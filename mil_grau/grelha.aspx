@@ -27,7 +27,7 @@
                     <!-- Navigation. We hide it in small screens. -->
                     <nav class="mdl-navigation mdl-layout--large-screen-only">
                         <a class="mdl-navigation__link" href="#">Home</a>
-                        <a class="mdl-navigation__link" href="#">Receitas</a>
+                        <a class="mdl-navigation__link" href="CadastroReceita.aspx">Receitas</a>
                         <a class="mdl-navigation__link" href="institucional.aspx">Institucional</a>
                         <a class="mdl-navigation__link" href="https://nabrasa.freshdesk.com/">Suporte</a>
                     </nav>

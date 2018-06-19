@@ -68,6 +68,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CadastroReceita.aspx" />
     <Content Include="css\grelha.css" />
     <Content Include="css\index.css" />
     <Content Include="css\Institucional.css" />
@@ -113,6 +114,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadastroReceita.aspx.cs">
+      <DependentUpon>CadastroReceita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CadastroReceita.aspx.designer.cs">
+      <DependentUpon>CadastroReceita.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionFactory.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
