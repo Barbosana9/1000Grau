@@ -9,7 +9,7 @@ void setup() {
 void loop() {
   valorLindo = analogRead(pinoSensor);
   temperatura = (valorLindo * 0.00488);
-  temperatura = temperatura * 100;
+  temperatura = (temperatura * 100)*2;
   Serial.println(temperatura);
  
   delay(500);

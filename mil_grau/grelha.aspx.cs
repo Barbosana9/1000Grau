@@ -117,7 +117,7 @@ namespace mil_grau
 
         private void finalizarPreparo()
         {
-            throw new NotImplementedException();
+            lblTempoPreparo.Text = "Retire Agora";
         }
     }
 }

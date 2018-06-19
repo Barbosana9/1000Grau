@@ -71,7 +71,15 @@
     <Content Include="css\grelha.css" />
     <Content Include="css\index.css" />
     <Content Include="css\Institucional.css" />
+    <Content Include="css\one-page-wonder.css" />
+    <Content Include="css\one-page-wonder.min.css" />
     <Content Include="css\TelaAcesso.css" />
+    <Content Include="img\473375722.jpg" />
+    <Content Include="img\vanesa.jpg" />
+    <Content Include="img\nayara.jpg" />
+    <Content Include="img\grelha.jpg" />
+    <Content Include="img\images.jpg" />
+    <Content Include="img\matheus.JPG" />
     <Content Include="institucional.aspx" />
     <Content Include="js\grelha.js" />
     <Content Include="js\index.js" />
@@ -83,6 +91,7 @@
     <Content Include="scss\_mixins.scss" />
     <Content Include="scss\_navbar.scss" />
     <Content Include="scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\nabrasa-milgrau - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\NomeCreativo - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
